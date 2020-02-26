@@ -1,23 +1,13 @@
 class Team
- attr_accessor :name, :motto
+ attr_accessor :name, :motto, :heroes
 
-  @@all = []
+  def initialize(name, motto)
+    @name = name
+    @motto = motto
+    @heroes = []
+  end 
 
-  def initialize(attributes)
-    @name = attributes[:name]
-    @motto = attributes[:motto]
-    self.save
-  end
-
-  def save
-    @@all << self
-  end
-
-  def all
-    @@all
-  end
-
-  def clear
-    @@all = []
+  def add_hero(hero)
+    @heroes << hero 
   end
 end

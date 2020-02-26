@@ -10,9 +10,7 @@ class App < Sinatra::Base
   end
   
   post '/teams' do
-        @team = Team.new(params[:team])
-        @heroes = params[:team][:heroes].map do |hero_attributes|
-            Hero.new(hero_attributes)
+        
         end
         erb :team
     end
